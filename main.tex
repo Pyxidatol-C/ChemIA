@@ -1,21 +1,24 @@
-\documentclass[a4paper, 12pt]{paper}
+\documentclass[a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{myshortcuts}
 \usepackage{a4wide}
 \usepackage{mhchem}
+\usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{etoolbox}
+\usepackage{multicol}
 \usepackage[british]{babel}
 \usepackage[labelfont=bf]{caption}
-\usepackage[style=mla,backend=biber]{biblatex}
+\usepackage[style=numeric,backend=biber]{biblatex}
 
+\DeclareSIUnit{\molar}{M}
 
 \addbibresource{mysources.bib}
 
 \title{
 \textbf{Chemistry Internal Assessment}\\
 \bigskip
-RQ
+What effect does varying the concentration have on the rate of decomposition of \ce{H2O2} in presence of \ce{Fe^3+} ions?
 }
 \author{Jingjie YANG}
 \date{}
@@ -23,23 +26,73 @@ RQ
 \begin{document}
 \maketitle
 
-\section*{Introduction}
+\section{Background Information}
+$$\ce{H2O2(aq) ->[Fe^3+] 2H2O(l) + O2(g)}$$
 
-\section*{Chemicals}
+\section{Research Question}
+\paragraph{Hypothesis}
 
-\section*{Apparatus}
+\section{Variables}
+\paragraph{Independent variable:}
+concentration of \ce{H2O2}
 
-\section*{Method}
+\paragraph{Dependent variable:}
+initial rate of change in gas pressure
 
-\section*{Raw Data}
+\paragraph{Controlled variables:}
+\begin{itemize}
+    \item volume of reaction mixture
+    \item concentration of \ce{FeCl3} catalyst
+    % TODO check if these should be included if to be talked in evaluation
+    \item temperature of reaction mixture
+    \item volume of test tube
+\end{itemize}
 
-\section*{Processed Data}
+\section{Materials}
+\subsection{Chemicals}
+\begin{multicols}{2}
+\begin{itemize}
+    % TODO calculate molar concentration
+    \item \SI{80}{\mL} of \SI{3}{\percent} \ce{H2O2}
+    \item \SI{30}{\mL} of \SI{0.1}{\molar} \ce{FeCl3}
+\columnbreak
+    \item \SI{80}{\mL} of distilled water
+\end{itemize}
+\end{multicols}
+\paragraph{Safety} 
+% TODO add safety information
+Goggles, gloves, and a lab coat must be worn.
 
-\section*{Conclusion}
+\subsection{Apparatus}
+\begin{multicols}{2}
+\begin{itemize}
+    \item \SI{1}{\L} beaker
+    \item \SI{18x150}{\mm} glass test tubes
+    \item one-hole rubber stopper
+    \item tubing with two Luer-lock connectors
+\columnbreak
+    \item LabQuest
+    \item Vernier temperature probe (range: \num{-40} to \SI{135}{\celsius}; accuracy: \SI{+-0.2}{\celsius} \autocite{vernier_temperature})
+    \item Vernier gas pressure sensor (range: \num{0} to \SI{210}{\kPa}; accuracy: \SI{+-4}{\kPa} \autocite{vernier_gas_pressure})
+\end{itemize}
+    
+\end{multicols}
 
-\section*{Evaluation}
+\section{Method}
+% TODO don't forget disposal
+\begin{enumerate}
+    \item 
+\end{enumerate}
 
-\section*{Extension}
+\section{Raw Data}
+
+\section{Processed Data}
+
+\section{Conclusion}
+
+\section{Evaluation}
+
+\section{Extension}
 
 \printbibliography
 
