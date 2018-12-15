@@ -3,13 +3,13 @@
 \usepackage{myshortcuts}
 \usepackage{a4wide}
 \usepackage{mhchem}
-\usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{enumitem}
 \usepackage{etoolbox}
 \usepackage[british]{babel}
 \usepackage[labelfont=bf]{caption}
 \usepackage[style=numeric,backend=biber]{biblatex}
+\usepackage[separate-uncertainty=true, multi-part-units=single]{siunitx}
 
 \DeclareSIUnit{\molar}{M}
 
@@ -26,13 +26,13 @@ What effect does varying the concentration have on the rate of decomposition of 
 \begin{document}
 \maketitle
 
-\section{Background Information}
+\section*{Background Information}
 $$\ce{2 H2O2(aq) ->[{cat.}] 2 H2O(l) + O2(g)}$$
 
-\section{Research Question}
+\section*{Research Question}
 \paragraph{Hypothesis}
 
-\section{Variables}
+\section*{Variables}
 \paragraph{Independent variable:}
 concentration of \ce{H2O2}
 
@@ -48,8 +48,8 @@ initial rate of change in gas pressure
     \item volume of test tube
 \end{itemize}
 
-\section{Materials}
-\subsection{Apparatus}
+\section*{Materials}
+\subsection*{Apparatus}
 \begin{itemize}
     \item \SI{1}{\L} beaker
     \item \SI{18x150}{\mm} glass test tubes
@@ -61,7 +61,7 @@ initial rate of change in gas pressure
     \item three \SI{5.00}{\mL} graduated pipettes (precision: \SI{+-0.05}{\mL}) with bulbs
 \end{itemize}
 
-\subsection{Chemicals}
+\subsection*{Chemicals}
 \begin{itemize}
     % TODO calculate molar concentration
     \item \SI{80}{\mL} of \SI{3}{\percent}(w/w) \ce{H2O2}
@@ -71,11 +71,11 @@ initial rate of change in gas pressure
 \paragraph{Safety} 
 Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{safety_h2o2}, \SI{0.1}{\molar} \ce{FeCl3} is identified to be irritant and corrosive upon immediate skin or eye contact \autocite{safety_fecl3}. Goggles, gloves, and a lab coat must be worn.
 
-\section{Method}
+\section*{Method}
 \begin{enumerate}
     \item Set up a water bath with a \SI{1}{\L} beaker to immerse a test tube with room-temperature water --- see \cref{fig:setup} below.
     \item Connect the rubber stopper to a Vernier gas pressure sensor with a plastic tubing, and secure with one-half turn of the fittings.
-    \item \label{item:trial-start} Using graduated pipettes, draw \SI{1.00}{\mL} of \SI{2.86E-2}{\molar} (see \cref{app:molar_conc_h2o2} for derivation) hydrogen peroxide and \SI{3.00}{\mL} of distilled water into the test tube.
+    \item \label{item:trial-start} Using graduated pipettes, draw \SI{1.00}{\mL} of \SI{3}{\%} hydrogen peroxide and \SI{3.00}{\mL} of distilled water into the test tube.
     \item Record the temperature of the water using a temperature probe. Wait for 5 minutes until the solution in the test tube reaches the same temperature as the bath.
     \item Connect the gas pressure sensor and the temperature probe to a LabQuest. Set up the LabQuest to record 2 samples per second for 180 seconds.
     \item Using another graduated pipette, draw \SI{1.00}{\mL} of \SI{0.1}{\molar} iron(III) chloride solution.
@@ -88,36 +88,41 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.5\textwidth]{imgs/setup}
+    \includegraphics[width=0.36\textwidth]{imgs/setup}
     \caption{setup of the experiment}
     \label{fig:setup}
 \end{figure}
 
 
-\section{Raw Data}
-\subsection{Observations}
-\begin{figure}[htb]
+\section*{Raw Data}
+\subsection*{Observations}
+\begin{itemize}
+    \item \SI{3}{\percent} \ce{H2O2} is a clear, colourless solution.
+    \item 
+    \item 
+\end{itemize}
+
+\begin{figure}[h!tb]
     \centering
-    \includegraphics[width=\textwidth]{imgs/colours}
-    \caption{(from left to right) hydrogen peroxide, iron(III) chloride, reaction mixtures}
+    \includegraphics[width=0.8\textwidth]{imgs/colours}
+    \caption{(from left to right) hydrogen peroxide, iron(III) chloride, reaction mixtures. }
     \label{fig:colours}
 \end{figure}
 
-\SI{3}{\percent} \ce{H2O2} is a clear, colourless solution. 
-
-\begin{figure}[hbt]
+\subsection*{Experimental data}
+\begin{figure}[h!tb]
     \centering
-    \caption{\SI{1.50}{\mL} of \SI{3}{\percent} \ce{H2O2}}
-    \includegraphics[width=\textwidth]{imgs/pressure}
-    \label{fig:pressure}
+    \includegraphics[width=\textwidth]{data/raw_data}
+    \caption{measured gas pressure over time for the decomposition of \ce{H2O2} by \ce{Fe(III)}. $[\ce{Fe^{3+}}] = \SI{0.02}{\molar}$; ambient temperature (\SI{23.3(10)}{\celsius}). }
+    \label{fig:raw-data}
 \end{figure}
 
-\section{Processed Data}
+\section*{Processed Data}
 \begin{table}[h]
     \centering
     \caption{Processed data}
     \label{table:data}
-    \begin{tabular}{ |l r|l r| }
+    \begin{tabular}{ |r r|r r| }
         \hline
         \multicolumn{2}{ |c| }{\textbf{[\ce{H2O2}]} (\si{\percent})} &
         \multicolumn{2}{  c| }{\textbf{Initial rate} (\si{\kPa\per\second})}
@@ -133,29 +138,12 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
     \end{tabular}
 \end{table}
 
-\section{Evaluation}
+\section*{Evaluation}
 
-\section{Conclusion}
+\section*{Conclusion}
 
-\section{Extension}
+\section*{Extension}
 
 \printbibliography
-
-\appendix
-\section{Molar concentration of \SI{3}{\percent}(w/w) \ce{H2O2}}\label{app:molar_conc_h2o2}
-\begin{align*}
-    \zeta_{\ce{H2O2}} 
-    &= \dfrac{m_{\ce{H2O2}}}{m_{\ce{H2O}}}
-     = \dfrac{\rho_{\ce{H2O2}} \times V_{\ce{H2O2}}}{\rho_{\ce{H2O}} \times V_{\ce{H2O}}}\\
-    \iff V_{\ce{H2O}}
-    &= \dfrac{\rho_{\ce{H2O2}} \times V_{\ce{H2O2}}}{\rho_{\ce{H2O}} \times \zeta_{\ce{H2O2}}}\\
-    \therefore [\ce{H2O2}]
-    &= \dfrac{n(\ce{H2O2})}{V_{\text{total}}}\\
-    &= \dfrac{m_{\ce{H2O2}} / RFM(\ce{H2O2})}{V_{\ce{H2O2}} + V_{\ce{H2O}}}\\
-    &= \dfrac{\rho_{\ce{H2O2}} \times V_{\ce{H2O2}} / RFM(\ce{H2O2})}{V_{\ce{H2O2}} + V_{\ce{H2O}}}\\
-    &= \dfrac{\rho_{\ce{H2O2}}}{RFM(\ce{H2O2})} \times \dfrac{1}{1 + \dfrac{\rho_{\ce{H2O2}}}{\rho_{\ce{H2O}} \times \zeta_{\ce{H2O2}}}}\\
-    &= \dfrac{\SI{1.44}{\g\per\mL}}{\SI{34.02}{\g\per\mol}} \times \dfrac{1}{1 + \dfrac{\SI{1.44}{\g\per\mL}}{\SI{1.00}{\g\per\mL} \times \SI{3}{\percent}}}\\
-    &= \SI{2.86E-2}{\molar}
-\end{align*}
 
 \end{document}
