@@ -3,15 +3,23 @@
 \usepackage{myshortcuts}
 \usepackage{a4wide}
 \usepackage{mhchem}
+\usepackage{physics}
 \usepackage{csquotes}
 \usepackage{enumitem}
 \usepackage{etoolbox}
+\usepackage{multirow}
 \usepackage[british]{babel}
 \usepackage[labelfont=bf]{caption}
 \usepackage[style=numeric,backend=biber]{biblatex}
 \usepackage[separate-uncertainty=true, multi-part-units=single]{siunitx}
 
+\allowdisplaybreaks
+
+\sisetup{detect-all = true}
+
 \DeclareSIUnit{\molar}{M}
+
+% https://tex.stackexchange.com/questions/201425/command-to-italicize-text-with-slanted-numbers
 
 \addbibresource{mysources.bib}
 
@@ -84,12 +92,12 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
     \item \label{item:trials-end} Repeat steps \ref{item:trial-start} to \ref{item:trial-end} for at least another two trials.
     \item Repeat steps \ref{item:trial-start} to \ref{item:trials-end}, increasing the volume of hydrogen peroxide added in step \ref{item:trial-start} by \SI{0.50}{\mL} up to \SI{4.00}{\mL} and decreasing the volume of distilled water by \SI{0.50}{\ml}.
 \end{enumerate}
-\paragraph{Disposal} Excess \ce{H2O2} can go down the sink with water; leftover \ce{FeCl3} must be discarded in the metal waste jar.
+\paragraph{Disposal} Excess \ce{H2O2} can go down the sink with water; leftover \ce{FeCl3} must be discarded in the metal waste jar. Unused \ce{H2O2} should be stored in a refrigerator.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.36\textwidth]{imgs/setup}
-    \caption{setup of the experiment}
+    \caption{Setup of the experiment}
     \label{fig:setup}
 \end{figure}
 
@@ -98,45 +106,152 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
 \subsection*{Observations}
 \begin{itemize}
     \item \SI{3}{\percent} \ce{H2O2} is a clear, colourless solution. Some fine bubbles can be seen.
-    \item \SI{0.1}{\molar} \ce{FeCl3} turns from pale yellow to brown during the course of the reaction, accompanied by a vigorous effervescence after approximately 30 seconds.
+    \item Upon the addition of \SI{0.1}{\molar} \ce{FeCl3}, the aqueous catalyst turns from pale yellow to brown, accompanied by a vigorous effervescence after shaking. This change is delayed when smaller volumes of \ce{H2O2} are reacted.
+    \item 2 trials using \SI{4.00}{\mL} \ce{H2O2} were terminated prematurely, because the rubber stopper popped due to an excessive volume of gas formed.
     \item After about 10 minutes, with the formation of gas becoming less noticeable, the pale yellow colour of \ce{FeCl3} solution returns.
 \end{itemize}
 
-\begin{figure}[h!tb]
+\newpage
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{imgs/colours}
-    \caption{(from left to right) hydrogen peroxide, iron(III) chloride, reaction mixtures approximately 12 minutes, 9 minutes, 6 minutes, and 3 minutes after the start of reaction. }
+    \caption{(From left to right) hydrogen peroxide, iron(III) chloride, reaction mixtures approximately 12 minutes, 9 minutes, 6 minutes, and 3 minutes after the start of reaction. }
     \label{fig:colours}
 \end{figure}
 
 \subsection*{Experimental data}
-\begin{figure}[h!tb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{data/raw_data}
-    \caption{measured gas pressure over time for the decomposition of \ce{H2O2} by \ce{Fe(III)}. $[\ce{Fe^{3+}}] = \SI{0.02}{\molar}$; ambient temperature (\SI{23.3(10)}{\celsius}). }
+    \caption{Measured gas pressure over time for the decomposition of \ce{H2O2} by \ce{Fe(III)}. $[\ce{Fe^{3+}}] = \SI{0.02}{\molar}$; ambient temperature (\SI{23.3(10)}{\celsius}). }
     \label{fig:raw-data}
 \end{figure}
 
+The approximately linear parts of the gas pressure curves can be observed, corresponding to the observed formation of gas and colour change, marking the start of the reaction. Overall, the larger the volume and as such the higher concentration of the \ce{H2O2} is reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day.
+
 \section*{Processed Data}
-\begin{table}[h]
+Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} shown by the blue curves in \cref{fig:raw-data}. The initial rate is derived from \SI{15}{\s}-long segments of the linear part --- determined by the R$^2$ value of the line of best fit --- using the differential formula \autocite{numerical_method}:
+\[ 
+    \dv{P}{t} 
+    = \dfrac{ P_{ \text{end} } - P_{ \text{start} } }{ t_{ \text{end} } - t_{ \text{start} } }
+    \text{ where } t_{ \text{end} } - t_{ \text{start} } = \SI{15.00}{\s}. 
+\]
+
+\begin{table}
     \centering
-    \caption{Processed data}
-    \label{table:data}
-    \begin{tabular}{ |r r|r r| }
+    \caption{Initial rates for reactions with \SI{3.00}{\mL} of \SI{3}{\%} \ce{H2O2}}
+    \label{table:calc}
+    \begin{tabular}{ | c | c | c | c | }
         \hline
-        \multicolumn{2}{ |c| }{\textbf{[\ce{H2O2}]} (\si{\percent})} &
-        \multicolumn{2}{  c| }{\textbf{Initial rate} (\si{\kPa\per\second})}
-        \\\hline
-        \num{0.600} & \num{+-0.032} & \num{0.213} & \num{+-0.041}\\\hline
-        \num{0.900} & \num{+-0.038} & \num{0.358} & \num{+-0.003}\\\hline
-        \num{1.200} & \num{+-0.044} & \num{0.340} & \num{+-0.168}\\\hline
-        \num{1.500} & \num{+-0.050} & \num{0.650} & \num{+-0.039}\\\hline
-        \num{1.800} & \num{+-0.056} & \num{0.905} & \num{+-0.010}\\\hline
-        \num{2.100} & \num{+-0.062} & \num{0.984} & \num{+-0.020}\\\hline
-        \num{2.400} & \num{+-0.068} & \num{1.230} & \num{+-0.117}\\
-        \hline
+        \multirow{2}{*}{\textbf{Trials}} &
+        \multicolumn{2}{ c| }{\textbf{Gas pressure (\si{\kPa})}}& 
+        \multirow{2}{*}{\textbf{Initial rate (\si{\kPa\per\second})}}
+        \\ \cline{2-3}
+        &
+        $t = \SI{91.5}{\second}$ &
+        $t = \SI{121.5}{\second}$ &
+        \\ \hline
+        0 &
+        113.96 &
+        117.80 &
+        0.256
+        \\ \hline
+        1 &
+        119.06 &
+        123.19 &
+        0.275
+        \\ \hline
+        2 &
+        120.38 &
+        124.40 &
+        0.268
+        \\ \hline
+        3 &
+        119.92 &
+        123.88 &
+        0.264
+        \\ \hline
+        \multicolumn{3}{ | c | }{\textbf{Average}} &
+        0.269
+        \\ \hline
+        \multicolumn{3}{ | c | }{\textbf{Standard deviation}} &
+        0.003
+        \\ \hline
     \end{tabular}
 \end{table}
+
+Note that the accuracy of \SI{\pm 4}{\kPa} of the gas pressure sensor is considered to affect the readings consistently, and as such is a systematic error that does not contribute to the uncertainty in the initial rate. Furthermore, the uncertainties arising from the precision of the readings evaluates to 
+\begin{align*}
+    \Delta \left(\dv{P}{t}\right) 
+    &=  \dv{P}{t} 
+        \times \left(
+            \frac{ 2 \times \SI{0.01}{\kPa} }{P_{ \text{end} } - P_{ \text{start} }}
+            + \frac{ 2 \times \SI{0.01}{\s} }{t_{ \text{end} } - t_{ \text{start} }}
+        \right)\\
+    &= \SI{0.269}{\kPa\per\s} \times \left( \frac{\SI{0.02}{\kPa}}{\SI{0.269}{\kPa\per\s} \times \SI{15.00}{\s}} + \frac{\SI{0.02}{\s}}{\SI{15.00}{\s}} \right)\\
+    &= \SI{+-0.002}{\kPa\per\s}
+\end{align*}
+which is smaller than --- or even negligible for some other trials --- the standard deviation. Therefore, the uncertainty in the initial rate is determined by the standard deviation.
+
+The \SI{3}{\%}(w/w) concentration of \ce{H2O2} means that, proportionally, there is \SI{3}{\g} of \ce{H2O2} per \SI{100}{\g} of solution. In addition, it is indicated on the data sheet \autocite{safety_h2o2} that the density of the solution is \SI{1.01}{\g\per\cm^3}. The molar concentration of the \SI{3}{\%}(w/w) \ce{H2O2} solution is then
+\begin{align*}
+    % Initial concentration
+    [\ce{H2O2}]_{\SI{3}{\%}}
+    &= \dfrac{ n(\ce{H2O2}) }{ V(\text{solution}) }\\
+    &= \dfrac{ m(\ce{H2O2}) / RFM(\ce{H2O2}) }{ m(\text{solution}) / \rho(\text{solution})}\\
+    &= \dfrac{ \SI{3}{\g} / \SI{34.02}{\g\per\mol} } { \SI{100}{\g} / \SI{1.01}{\g\per\cm\cubed} }\\
+    &= \SI{8.91E-4}{\mol\per\cm\cubed}\\
+    &= \SI{0.891}{\molar}.\\
+    % Diluted concentration
+    [\ce{H2O2}]
+    &= [\ce{H2O2}]_{\SI{3}{\%}} \times \dfrac{ V(\ce{H2O2}) }{ V(\ce{H2O2}) + V(\ce{H2O}) + V(\ce{FeCl3}) }\\
+    &= \SI{0.891}{\molar} \times \dfrac{ \SI{3.00}{\mL} }{ \SI{3.00}{\mL} + \SI{1.00}{\mL} + \SI{1.00}{\mL} }\\
+    &= \SI{0.534}{\molar}\\
+    % Uncertainty in diluted concentration
+    \Delta([\ce{H2O2}])
+    &= [\ce{H2O2}] \times \fracDeltaP{\ce{H2O2}}\\
+    &= [\ce{H2O2}] \times \left(\fracDelta{V(\ce{H2O2})} + \frac{ \Delta V(\ce{H2O2}) + \Delta V(\ce{H2O}) + \Delta V(\ce{FeCl3}) }{ V(\ce{H2O2}) + V(\ce{H2O}) + V(\ce{FeCl3}) }\right)\\
+    &= \SI{0.534}{\molar} \times \left(\frac{ 2 \times \SI{0.05}{\mL} }{ \SI{3.00}{\mL} } + \frac{ 2 \times \SI{0.05}{\mL} + \SI{0.05}{\mL} + \SI{0.05}{\mL} }{ \SI{3.00}{\mL} + \SI{1.00}{\mL} + \SI{1.00}{\mL} }\right)\\
+    &= \SI{+-0.039}{\molar}
+\end{align*}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Initial rate versus [\ce{H2O2}]. The sample calculation is highlighted in italics. }
+    \label{table:data}
+    \begin{tabular}{ | c | c | }
+        \hline
+        \textbf{[\ce{H2O2}]} (\si{\molar}) &
+        \textbf{Average initial rate} (\si{\kPa\per\second})
+        \\ \hline
+        \num{0.178(24)} & \num{0.063(12)}
+        \\ \hline
+        \num{0.267(28)} & \num{0.106(1)}
+        \\ \hline
+        \num{0.356(32)} & \num{0.101(49)}
+        \\ \hline
+        \num{0.445(35)} & \num{0.193(12)}
+        \\ \hline
+        \textit{\num{0.534(39)}} & \textit{\num{0.269(3)}}
+        \\ \hline
+        \num{0.623(42)} & \num{0.291(6)}
+        \\ \hline
+        \num{0.713(46)} & \num{0.366(35)}
+        \\ \hline
+    \end{tabular}
+\end{table}
+
+\section*{Results}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{data/processed_data}
+    \caption{Initial rate versus [\ce{H2O2}]. [\ce{Fe^3+}] = \SI{0.02}{\molar}; ambient temperature (\SI{23.3(10)}{\celsius}). Michaelis-Menten is shown in red. }
+    \label{fig:processed-data}
+\end{figure}
+
 
 \section*{Evaluation}
 

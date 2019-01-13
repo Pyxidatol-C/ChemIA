@@ -9,9 +9,11 @@
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.13}
 \RequirePackage{amsthm}
+\RequirePackage{suffix}
 \RequirePackage{graphicx}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[capitalise, nameinlink]{cleveref}
+\RequirePackage{suffix}
 
 %--------Theorem Environments--------
 \makeatletter
@@ -97,3 +99,5 @@
 \newcommand{\iso}{\cong}
 \newcommand{\tri}{$\triangle$}
 \newcommand{\Pp}{\mathbb{P}_p}
+\newcommand{\fracDeltaP}[1]{\frac{\Delta(#1)}{#1}}
+\newcommand{\fracDelta}[1]{\frac{\Delta#1}{#1}}
