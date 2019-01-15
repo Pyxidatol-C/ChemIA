@@ -271,28 +271,34 @@ This approach is typically applied to model single-substrate enzyme-catalysed re
 \]
 where \ce{E}, \ce{S}, and \ce{P} are respectively the enzyme, the substrate, and the product. In this study, it is hypothesised that \ce{Fe^3+}, \ce{H2O2}, and \ce{O2} respectively play these roles.
 
-An instantaneous chemical equilibrium is assumed; i.e., $$k_f \ce{[E][S]} = k_r \ce{[ES]}.$$ Since the enzyme acts as a catalyst and is not consumed during the course of the reaction, it is admitted that $\ce{[E]_0} = \ce{[E] + [ES]}$ where $\ce{[E]_0}$ is the initial enzyme concentration, or equivalently, $$\ce{[E]} = \ce{[E]_0 - [ES]}.$$ Combining both equations, 
-\begin{align*}
-    k_f( \ce{[E]_0 - [ES]})\ce{[S]} &= k_r \ce{[ES]}\\
-    (k_f \ce{[S]} + k_r) \ce{[ES]} &= k_f \ce{[E]_0[S]}\\
-    \ce{[ES]} &= \frac{k_f \ce{[E]_0[S]}}{k_f\ce{[S]} + k_r} = \frac{\ce{[E]_0[S]}}{[S] + K_d}
-\end{align*}
-where $K_d = \frac{k_r}{k_f}$ is the equilibrium constant of $\ce{ES <=>[k_r][k_f] E + S}$.
+Since the enzyme acts as a catalyst and is not consumed during the course of the reaction, it is admitted that $\ce{[E]_0} = \ce{[E] + [ES]}$ where $\ce{[E]_0}$ is the initial enzyme concentration, or equivalently, 
+\[
+\ce{[E]} = \ce{[E]_0 - [ES]}.
+\]
 
-Finally, from $\ce{ES ->[k_{\text{cat}}] E + P}$, the rate of product of product formation is given by
+A quasi-steady-state is assumed; i.e., 
+\begin{align*}
+    &\ce{k_f [E][S] - k_r [ES] - k_{\text{cat}} [ES] = 0}\\
+    \iff &\ce{k_f ([E]_0 - [ES]) [S] - (k_r + k_{\text{cat}}) [ES] = 0}\\
+    \iff &\ce{k_f [E]_0 [S] = (k_f [S] + k_r + k_{\text{cat}})[ES]}\\
+    \iff &\ce{[ES] = \frac{k_f [E]_0 [S]}{k_f [S] + (k_r + k_{\text{cat}})}}
+    = \ce{\frac{[E]_0 [S]}{[S] + K_m}}
+\end{align*}
+where $K_m = \dfrac{k_r + k_\text{cat}}{k_f}$ is known as the Michaelis constant. Finally, from $\ce{ES ->[k_{\text{cat}}] E + P}$, the rate of product of product formation is given by
 \begin{align}
-    \dv{\ce{[P]}}{t} &= k_{\text{cat}} \times \ce{[ES]} = k_{\text{cat}} \times \frac{\ce{[E]_0[S]}}{\ce{[S]} + K_d}
+    \dv{\ce{[P]}}{t} &= k_{\text{cat}} \times \ce{[ES]} = k_{\text{cat}} \times \frac{\ce{[E]_0[S]}}{\ce{[S]} + K_m}
 \nonumber\\
-    \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_d}\label{eq:mm}
+    \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_m}\label{eq:mm}
 \end{align}
-where $k_{\text{obs}} = \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_d$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox.
+where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_m$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{data/processed_data}
-    \caption{Initial rate versus [\ce{H2O2}]. [\ce{Fe^3+}] = \SI{0.02}{\molar}; ambient temperature (\SI{23.3(10)}{\celsius}). The power law is shown in green; the Michaelis-Menten equation is shown in red. }
+    \caption{Initial rate versus [\ce{H2O2}]. [\ce{Fe^3+}] = \SI{0.02}{\molar}; ambient temperature (\SI{23.3(10)}{\celsius}). \Cref{eq:rateEq}, the rate equation is shown in green; \cref{eq:mm}, the Michaelis-Menten equation, is shown in red. }
     \label{fig:processed-data}
 \end{figure}
+
 
 
 \section*{Evaluation}
