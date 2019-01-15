@@ -132,7 +132,7 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
     \label{fig:raw-data}
 \end{figure}
 
-The gas pressure curve generally consists of 3 parts: an initial plateau before sealing the test tube, a slowly increasing curve after inserting the rubber stopper which can be attributed to the dissolution of the oxygen produced, and a linear part where the aqueous oxygen reaches saturation and gaseous oxygen continues to be produced at a mostly consistent rate. Overall, the larger the volume and as such the higher concentration of the \ce{H2O2} is reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day.
+The gas pressure curve generally consists of 3 parts: an initial plateau before sealing the test tube, a slowly increasing curve after inserting the rubber stopper which can be attributed to the dissolution of the oxygen produced, and a linear part where the aqueous oxygen reaches saturation and gaseous oxygen continues to be produced at a mostly consistent rate. Overall, the larger the volume and as such the higher concentration of the \ce{H2O2} is reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day resulting in lower reaction rates.
 
 \section*{Processed Data}
 Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} shown by the blue curves in \cref{fig:raw-data}. The initial rate is derived from the first \SI{15}{\s}-long segment of the linear part --- determined by the R$^2$ value of the line of best fit --- using the differential formula \autocite{numerical_method}:
@@ -251,8 +251,8 @@ The figures are calculated in the same figure for the other trials, yielding:
 \section*{Results}
 Two kinetic models are proposed for explaining the experimental data: the rate equation given by a power law, and the Michaelis-Menten equation.
 
-\paragraph{Rate equation}
-This approach assumes that, like for many reactions, the rate equation of the reaction $\ce{ 2 H2O2(aq) ->[Fe^3+] 2 H2O(l) + O2(g) }$ is given by the power law
+\paragraph{Power law}
+This approach assumes that, like for many reactions, the rate equation of the reaction $\ce{ 2 H2O2(aq) ->[Fe^3+] 2 H2O(l) + O2(g) }$ is given by a power law:
 \[ \text{rate} = \dv{[\ce{O2(g)}]}{t} = k [\ce{H2O2}]^a [\ce{Fe^3+}]^b. \]
 Since [\ce{Fe^3+}] is held constant at \SI{0.02}{\molar}, the above rate equation can be expressed as 
 \[ \dv{[\ce{O2(g)}]}{t} = k_{\text{obs}} [\ce{H2O2}]^a \]
@@ -299,7 +299,7 @@ where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{
     \label{fig:processed-data}
 \end{figure}
 
-
+At the exception of the \SI{2.00}{\mL} (or \SI{0.356}{\molar}) \ce{H2O2} trials, both curves pass through all the data points within the margins of error. Hence, the experimental data support both the power law formulation and the Michaelis-Menten model. 
 
 \section*{Evaluation}
 
