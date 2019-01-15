@@ -36,9 +36,11 @@ What effect does varying the concentration have on the rate of decomposition of 
 
 \section*{Background Information}
 $$\ce{2 H2O2(aq) ->[{cat.}] 2 H2O(l) + O2(g)}$$
+...
 
 \section*{Research Question}
-\paragraph{Hypothesis}
+...
+\paragraph{Hypothesis} ...
 
 \section*{Variables}
 \paragraph{Independent variable:}
@@ -49,6 +51,7 @@ initial rate of change in gas pressure
 
 \paragraph{Controlled variables:}
 \begin{itemize}
+    \itemsep 0em
     \item volume of reaction mixture
     \item concentration of \ce{FeCl3} catalyst
     % TODO check if these should be included if to be talked in evaluation
@@ -59,6 +62,7 @@ initial rate of change in gas pressure
 \section*{Materials}
 \subsection*{Apparatus}
 \begin{itemize}
+    \itemsep 0em
     \item \SI{1}{\L} beaker
     \item \SI{18x150}{\mm} glass test tubes
     \item one-hole rubber stopper
@@ -71,7 +75,7 @@ initial rate of change in gas pressure
 
 \subsection*{Chemicals}
 \begin{itemize}
-    % TODO calculate molar concentration
+    \itemsep 0em
     \item \SI{80}{\mL} of \SI{3}{\percent}(w/w) \ce{H2O2}
     \item \SI{30}{\mL} of \SI{0.1}{\molar} \ce{FeCl3}
     \item \SI{80}{\mL} of distilled water
@@ -81,12 +85,13 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
 
 \section*{Method}
 \begin{enumerate}
+    \itemsep 0em
     \item Set up a water bath with a \SI{1}{\L} beaker to immerse a test tube with room-temperature water --- see \cref{fig:setup} below.
     \item Connect the rubber stopper to a Vernier gas pressure sensor with a plastic tubing, and secure with one-half turn of the fittings.
     \item \label{item:trial-start} Using graduated pipettes, draw \SI{1.00}{\mL} of \SI{3}{\%} hydrogen peroxide and \SI{3.00}{\mL} of distilled water into the test tube.
     \item Record the temperature of the water using a temperature probe. Wait for 5 minutes until the solution in the test tube reaches the same temperature as the bath.
     \item Connect the gas pressure sensor and the temperature probe to a LabQuest. Set up the LabQuest to record 2 samples per second for 180 seconds.
-    \item Using another graduated pipette, draw \SI{1.00}{\mL} of \SI{0.1}{\molar} iron(III) chloride solution.
+    \item Using another graduated pipette, draw \SI{1.00}{\mL} of \SI{0.1}{\molar} iron(III) chloride solution. The concentration of the catalyst is then $[\ce{Fe^3+}] = \SI{1.0}{\molar} \times \frac{ \SI{1.00}{\mL} }{ \SI{5.00}{\mL} } = \SI{0.02}{\molar}$.
     \item Remove the rubber stopper. Quickly transfer the aqueous catalyst from the pipette to the test tube. Shake to mix the substances. Seal the test tube with the rubber stopper, and start recording data.
     \item \label{item:trial-end} Carefully remove the stopper to release the gas produced. Dispose of the solution in a labelled jar for metal waste, and rinse the test tube. Save the experimental data.
     \item \label{item:trials-end} Repeat steps \ref{item:trial-start} to \ref{item:trial-end} for at least another two trials.
@@ -94,7 +99,7 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
 \end{enumerate}
 \paragraph{Disposal} Excess \ce{H2O2} can go down the sink with water; leftover \ce{FeCl3} must be discarded in the metal waste jar. Unused \ce{H2O2} should be stored in a refrigerator.
 
-\begin{figure}[hbt]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.36\textwidth]{imgs/setup}
     \caption{Setup of the experiment}
@@ -105,13 +110,12 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
 \section*{Raw Data}
 \subsection*{Observations}
 \begin{itemize}
+    \itemsep 0em
     \item \SI{3}{\percent} \ce{H2O2} is a clear, colourless solution. Some fine bubbles can be seen.
-    \item Upon the addition of \SI{0.1}{\molar} \ce{FeCl3}, the aqueous catalyst turns from pale yellow to brown, accompanied by a vigorous effervescence after shaking. This change is delayed when smaller volumes of \ce{H2O2} are reacted.
+    \item Upon the addition of \SI{0.1}{\molar} \ce{FeCl3}, the aqueous catalyst turns from pale yellow to brown, accompanied by a vigorous effervescence after shaking.
     \item 2 trials using \SI{4.00}{\mL} \ce{H2O2} were terminated prematurely, because the rubber stopper popped due to an excessive volume of gas formed.
     \item After about 10 minutes, with the formation of gas becoming less noticeable, the pale yellow colour of \ce{FeCl3} solution returns.
 \end{itemize}
-
-\newpage
 
 \begin{figure}[H]
     \centering
@@ -128,17 +132,17 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
     \label{fig:raw-data}
 \end{figure}
 
-The approximately linear parts of the gas pressure curves can be observed, corresponding to the observed formation of gas and colour change, marking the start of the reaction. Overall, the larger the volume and as such the higher concentration of the \ce{H2O2} is reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day.
+The gas pressure curve generally consists of 3 parts: an initial plateau before sealing the test tube, a slowly increasing curve after inserting the rubber stopper which can be attributed to the dissolution of the oxygen produced, and a linear part where the aqueous oxygen reaches saturation and gaseous oxygen continues to be produced at a mostly consistent rate. Overall, the larger the volume and as such the higher concentration of the \ce{H2O2} is reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day.
 
 \section*{Processed Data}
-Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} shown by the blue curves in \cref{fig:raw-data}. The initial rate is derived from \SI{15}{\s}-long segments of the linear part --- determined by the R$^2$ value of the line of best fit --- using the differential formula \autocite{numerical_method}:
+Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} shown by the blue curves in \cref{fig:raw-data}. The initial rate is derived from the first \SI{15}{\s}-long segment of the linear part --- determined by the R$^2$ value of the line of best fit --- using the differential formula \autocite{numerical_method}:
 \[ 
     \dv{P}{t} 
     = \dfrac{ P_{ \text{end} } - P_{ \text{start} } }{ t_{ \text{end} } - t_{ \text{start} } }
     \text{ where } t_{ \text{end} } - t_{ \text{start} } = \SI{15.00}{\s}. 
 \]
 
-\begin{table}
+\begin{table}[H]
     \centering
     \caption{Initial rates for reactions with \SI{3.00}{\mL} of \SI{3}{\%} \ce{H2O2}}
     \label{table:calc}
@@ -216,6 +220,7 @@ The \SI{3}{\%}(w/w) concentration of \ce{H2O2} means that, proportionally, there
     &= \SI{+-0.039}{\molar}
 \end{align*}
 
+The figures are calculated in the same figure for the other trials, yielding:
 
 \begin{table}[H]
     \centering
@@ -244,11 +249,48 @@ The \SI{3}{\%}(w/w) concentration of \ce{H2O2} means that, proportionally, there
 \end{table}
 
 \section*{Results}
+Two kinetic models are proposed for explaining the experimental data: the rate equation given by a power law, and the Michaelis-Menten equation.
+
+\paragraph{Rate equation}
+This approach assumes that, like for many reactions, the rate equation of the reaction $\ce{ 2 H2O2(aq) ->[Fe^3+] 2 H2O(l) + O2(g) }$ is given by the power law
+\[ \text{rate} = \dv{[\ce{O2(g)}]}{t} = k [\ce{H2O2}]^a [\ce{Fe^3+}]^b. \]
+Since [\ce{Fe^3+}] is held constant at \SI{0.02}{\molar}, the above rate equation can be expressed as 
+\[ \dv{[\ce{O2(g)}]}{t} = k_{\text{obs}} [\ce{H2O2}]^a \]
+where $k_{\text{obs}} = k \times [\ce{Fe^3+}]^b$. Additionally, supposing that the \ce{O2(g)} produced obeys the ideal gas law $P V = n R T$, it can be deduced that $P = \frac{n}{V} \times R T = [\ce{O2(g)}] \times R T$, with $V$ the volume of the test tube being constant. Thus, treating $T$ as a constant,
+\begin{align}
+    &\dv{P}{t} = \dv{[\ce{O2(g)}]}{t} \times R T \nonumber\\
+    \iff &\dv{P}{t} = k_\text{obs} [\ce{H2O2}]^a \times R T \nonumber\\
+    \iff &\dv{P}{t} = k_\text{obs}' [\ce{H2O2}]^a \text{ where } k_\text{obs}' = k_\text{obs} \times R T.\label{eq:rateEq}
+\end{align}
+The parameters $a$ and $k_{\text{obs}}'$ can then be determined using MATLAB's curve fitting toolbox.
+
+\paragraph{Michaelis-Menten equation}
+This approach is typically applied to model single-substrate enzyme-catalysed reactions, namely, the sequence of elementary reactions
+\[
+\ce{E + S <=>[ k_f ][ k_r ] ES ->[ k_{\text{cat}} ] E + P}
+\]
+where \ce{E}, \ce{S}, and \ce{P} are respectively the enzyme, the substrate, and the product. In this study, it is hypothesised that \ce{Fe^3+}, \ce{H2O2}, and \ce{O2} respectively play these roles.
+
+An instantaneous chemical equilibrium is assumed; i.e., $$k_f \ce{[E][S]} = k_r \ce{[ES]}.$$ Since the enzyme acts as a catalyst and is not consumed during the course of the reaction, it is admitted that $\ce{[E]_0} = \ce{[E] + [ES]}$ where $\ce{[E]_0}$ is the initial enzyme concentration, or equivalently, $$\ce{[E]} = \ce{[E]_0 - [ES]}.$$ Combining both equations, 
+\begin{align*}
+    k_f( \ce{[E]_0 - [ES]})\ce{[S]} &= k_r \ce{[ES]}\\
+    (k_f \ce{[S]} + k_r) \ce{[ES]} &= k_f \ce{[E]_0[S]}\\
+    \ce{[ES]} &= \frac{k_f \ce{[E]_0[S]}}{k_f\ce{[S]} + k_r} = \frac{\ce{[E]_0[S]}}{[S] + K_d}
+\end{align*}
+where $K_d = \frac{k_r}{k_f}$ is the equilibrium constant of $\ce{ES <=>[k_r][k_f] E + S}$.
+
+Finally, from $\ce{ES ->[k_{\text{cat}}] E + P}$, the rate of product of product formation is given by
+\begin{align}
+    \dv{\ce{[P]}}{t} &= k_{\text{cat}} \times \ce{[ES]} = k_{\text{cat}} \times \frac{\ce{[E]_0[S]}}{\ce{[S]} + K_d}
+\nonumber\\
+    \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_d}\label{eq:mm}
+\end{align}
+where $k_{\text{obs}} = \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_d$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{data/processed_data}
-    \caption{Initial rate versus [\ce{H2O2}]. [\ce{Fe^3+}] = \SI{0.02}{\molar}; ambient temperature (\SI{23.3(10)}{\celsius}). Michaelis-Menten is shown in red. }
+    \caption{Initial rate versus [\ce{H2O2}]. [\ce{Fe^3+}] = \SI{0.02}{\molar}; ambient temperature (\SI{23.3(10)}{\celsius}). The power law is shown in green; the Michaelis-Menten equation is shown in red. }
     \label{fig:processed-data}
 \end{figure}
 
