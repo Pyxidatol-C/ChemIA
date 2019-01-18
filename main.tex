@@ -131,7 +131,7 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
     \label{fig:raw-data}
 \end{figure}
 
-The gas pressure curve generally consists of 3 parts: an initial plateau before sealing the test tube, a slowly increasing curve after inserting the rubber stopper which can be attributed to the dissolution of the oxygen produced, and a linear part where the aqueous oxygen reaches saturation and gaseous oxygen continues to be produced at a mostly consistent rate. Overall, the larger the volume and as such the higher concentration of the \ce{H2O2} is reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day resulting in lower reaction rates.
+The gas pressure curve generally consists of 3 parts: an initial plateau before sealing the test tube, a slowly increasing curve after inserting the rubber stopper which can be attributed to the dissolution of the oxygen produced, and a linear part where the aqueous oxygen reaches saturation and gaseous oxygen continues to be produced at a mostly consistent rate. Overall, the larger the volume of \SI{3}{\%}  \ce{H2O2} used in the reaction mixture and as such the higher concentration of the \ce{H2O2} reacted, the larger the volume of oxygen gas is formed as measured by the gas pressure at each instant. A deviation from this trend occurs for \SI{2.00}{\mL} of \ce{H2O2}, which may be attributed to the fact that, unlike the other trials, those 4 were all carried out next to the window on a cold winter day resulting in lower reaction rates.
 
 \section*{Processed Data}
 Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} shown by the blue curves in \cref{fig:raw-data}. The initial rate is derived from the first \SI{15}{\s}-long segment of the linear part --- determined by the R$^2$ value of the line of best fit --- using the differential formula \autocite{numerical_method}:
@@ -148,7 +148,7 @@ Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} sh
     \begin{tabular}{ | c | c | c | c | }
         \hline
         \multirow{2}{*}{\textbf{Trials}} &
-        \multicolumn{2}{ c| }{\textbf{Gas pressure (\si{\kPa})}}& 
+        \multicolumn{2}{ c| }{\textbf{Gas pressure (\si{\kPa}\SI{+-0.01}{\kPa})}}& 
         \multirow{2}{*}{\textbf{Initial rate (\si{\kPa\per\second})}}
         \\ \cline{2-3}
         &
@@ -184,7 +184,7 @@ Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} sh
     \end{tabular}
 \end{table}
 
-Note that the accuracy of \SI{\pm 4}{\kPa} of the gas pressure sensor is considered to affect the readings consistently, and as such is a systematic error that does not contribute to the uncertainty in the initial rate. Furthermore, the uncertainties arising from the precision of the readings evaluates to 
+Note that the \textbf{accuracy} of \SI{\pm 4}{\kPa} of the gas pressure sensor \cite{vernier_gas_pressure} is considered to affect the readings consistently, and as such is a systematic error that does not contribute to the uncertainty in the initial rate. Furthermore, the uncertainties arising from the precision of the readings evaluates to 
 \begin{align*}
     \Delta \left(\dv{P}{t}\right) 
     &=  \dv{P}{t} 
@@ -195,7 +195,7 @@ Note that the accuracy of \SI{\pm 4}{\kPa} of the gas pressure sensor is conside
     &= \SI{0.269}{\kPa\per\s} \times \left( \frac{\SI{0.02}{\kPa}}{\SI{0.269}{\kPa\per\s} \times \SI{15.00}{\s}} + \frac{\SI{0.02}{\s}}{\SI{15.00}{\s}} \right)\\
     &= \SI{+-0.002}{\kPa\per\s}
 \end{align*}
-which is smaller than --- or even negligible for some other trials --- the standard deviation. Therefore, the uncertainty in the initial rate is determined by the standard deviation.
+which is smaller than the standard deviation, and is even negligible for some other tirals. Therefore, the uncertainty in the initial rate is determined by the standard deviation.
 
 The \SI{3}{\%}(w/w) concentration of \ce{H2O2} means that, proportionally, there is \SI{3}{\g} of \ce{H2O2} per \SI{100}{\g} of solution. In addition, it is indicated on the data sheet \autocite{safety_h2o2} that the density of the solution is \SI{1.01}{\g\per\cm^3}. The molar concentration of the \SI{3}{\%}(w/w) \ce{H2O2} solution is then
 \begin{align*}
@@ -261,7 +261,7 @@ where $k_{\text{obs}} = k \times [\ce{Fe^3+}]^b$. Additionally, supposing that t
     \iff &\dv{P}{t} = k_\text{obs} [\ce{H2O2}]^a \times R T \nonumber\\
     \iff &\dv{P}{t} = k_\text{obs}' [\ce{H2O2}]^a \text{ where } k_\text{obs}' = k_\text{obs} \times R T.\label{eq:rateEq}
 \end{align}
-The parameters $a$ and $k_{\text{obs}}'$ can then be determined using MATLAB's curve fitting toolbox.
+The parameters $a$ and $k_{\text{obs}}'$ are then determined using MATLAB's curve fitting toolbox \cite{matlab}.
 
 \paragraph{Michaelis-Menten equation}
 This approach is typically applied to model single-substrate enzyme-catalysed reactions, namely, the sequence of elementary reactions
@@ -289,7 +289,7 @@ where $K_m = \dfrac{k_r + k_\text{cat}}{k_f}$ is known as the Michaelis constant
 \nonumber\\
     \iff \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_m}\label{eq:mm}
 \end{align}
-where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_m$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox.
+where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_m$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox \cite{matlab}.
 
 \begin{figure}[H]
     \centering
