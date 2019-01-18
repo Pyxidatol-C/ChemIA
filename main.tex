@@ -54,7 +54,6 @@ initial rate of change in gas pressure
     \itemsep 0em
     \item volume of reaction mixture
     \item concentration of \ce{FeCl3} catalyst
-    % TODO check if these should be included if to be talked in evaluation
     \item temperature of reaction mixture
     \item volume of test tube
 \end{itemize}
@@ -92,7 +91,7 @@ Although \SI{3}{\percent} \ce{H2O2} is classified as non-hazardous \autocite{saf
     \item Record the temperature of the water using a temperature probe. Wait for 5 minutes until the solution in the test tube reaches the same temperature as the bath.
     \item Connect the gas pressure sensor and the temperature probe to a LabQuest. Set up the LabQuest to record 2 samples per second for 180 seconds.
     \item Using another graduated pipette, draw \SI{1.00}{\mL} of \SI{0.1}{\molar} iron(III) chloride solution. The concentration of the catalyst is then $[\ce{Fe^3+}] = \SI{1.0}{\molar} \times \frac{ \SI{1.00}{\mL} }{ \SI{5.00}{\mL} } = \SI{0.02}{\molar}$.
-    \item Remove the rubber stopper. Quickly transfer the aqueous catalyst from the pipette to the test tube. Shake to mix the substances. Seal the test tube with the rubber stopper, and start recording data.
+    \item Remove the rubber stopper. Quickly transfer the aqueous catalyst from the pipette to the test tube. Swirl the test tube to mix the substances. Seal the test tube with the rubber stopper, and start recording data.
     \item \label{item:trial-end} Carefully remove the stopper to release the gas produced. Dispose of the solution in a labelled jar for metal waste, and rinse the test tube. Save the experimental data.
     \item \label{item:trials-end} Repeat steps \ref{item:trial-start} to \ref{item:trial-end} for at least another two trials.
     \item Repeat steps \ref{item:trial-start} to \ref{item:trials-end}, increasing the volume of hydrogen peroxide added in step \ref{item:trial-start} by \SI{0.50}{\mL} up to \SI{4.00}{\mL} and decreasing the volume of distilled water by \SI{0.50}{\ml}.
@@ -288,7 +287,7 @@ where $K_m = \dfrac{k_r + k_\text{cat}}{k_f}$ is known as the Michaelis constant
 \begin{align}
     \dv{\ce{[P]}}{t} &= k_{\text{cat}} \times \ce{[ES]} = k_{\text{cat}} \times \frac{\ce{[E]_0[S]}}{\ce{[S]} + K_m}
 \nonumber\\
-    \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_m}\label{eq:mm}
+    \iff \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_m}\label{eq:mm}
 \end{align}
 where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_m$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox.
 
@@ -299,7 +298,11 @@ where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{
     \label{fig:processed-data}
 \end{figure}
 
-At the exception of the \SI{2.00}{\mL} (or \SI{0.356}{\molar}) \ce{H2O2} trials, both curves pass through all the data points within the margins of error. Hence, the experimental data support both the power law formulation and the Michaelis-Menten model. 
+At the exception of the \SI{2.00}{\mL} (or \SI{0.356}{\molar}) \ce{H2O2} trials, both curves pass through all the data points within the margins of error. Hence, the experimental data support both the power law formulation and the Michaelis-Menten model.
+
+Test \cite{mathematical_biology}
+\cite{tachiev}
+\cite{de_laat}
 
 \section*{Evaluation}
 
