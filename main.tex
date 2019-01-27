@@ -36,7 +36,9 @@ What effect does varying the concentration have on the rate of decomposition of 
 
 \section*{Background Information}
 $$\ce{2 H2O2(aq) ->[{cat.}] 2 H2O(l) + O2(g)}$$
-...
+
+Empirical findings show that, for an elementary reaction, the rate is proportional to the product of the concentrations of the reactants each raised to their stoichiometric coefficients~\cite{elementary_rxn}. Similarly, the power law formulation of the rate equation express the rate as the product of the concentrations each raised to their order. Nonetheless, complex rate equations that cannot be expressed using a power law exist, which is often the case when it concerns a chain reaction.
+
 
 \section*{Research Question}
 ...
@@ -184,7 +186,7 @@ Below is a sample calculation for the trials with \SI{3.00}{\mL} of \ce{H2O2} sh
     \end{tabular}
 \end{table}
 
-Note that the \textbf{accuracy} of \SI{\pm 4}{\kPa} of the gas pressure sensor \cite{vernier_gas_pressure} is considered to affect the readings consistently, and as such is a systematic error that does not contribute to the uncertainty in the initial rate. Furthermore, the uncertainties arising from the precision of the readings evaluates to 
+Note that the \textbf{accuracy} of \SI{\pm 4}{\kPa} of the gas pressure sensor~\cite{vernier_gas_pressure} is considered to affect the readings consistently, and as such is a systematic error that does not contribute to the uncertainty in the initial rate. Furthermore, the uncertainties arising from the precision of the readings evaluates to 
 \begin{align*}
     \Delta \left(\dv{P}{t}\right) 
     &=  \dv{P}{t} 
@@ -261,7 +263,7 @@ where $k_{\text{obs}} = k \times [\ce{Fe^3+}]^b$. Additionally, supposing that t
     \iff &\dv{P}{t} = k_\text{obs} [\ce{H2O2}]^a \times R T \nonumber\\
     \iff &\dv{P}{t} = k_\text{obs}' [\ce{H2O2}]^a \text{ where } k_\text{obs}' = k_\text{obs} \times R T.\label{eq:rateEq}
 \end{align}
-The parameters $a$ and $k_{\text{obs}}'$ are then determined using MATLAB's curve fitting toolbox \cite{matlab}.
+The parameters $a$ and $k_{\text{obs}}'$ are then determined using MATLAB's curve fitting toolbox~\cite{matlab}.
 
 \paragraph{Michaelis-Menten equation}
 This approach is typically applied to model single-substrate enzyme-catalysed reactions, namely, the sequence of elementary reactions
@@ -275,7 +277,7 @@ Since the enzyme acts as a catalyst and is not consumed during the course of the
 \ce{[E]} = \ce{[E]_0 - [ES]}.
 \]
 
-A quasi-steady-state is assumed; i.e., 
+A quasi-steady-state of the concentration of the intermediate \ce{ES} is assumed; i.e., 
 \begin{align*}
     &\ce{k_f [E][S] - k_r [ES] - k_{\text{cat}} [ES] = 0}\\
     \iff &\ce{k_f ([E]_0 - [ES]) [S] - (k_r + k_{\text{cat}}) [ES] = 0}\\
@@ -289,7 +291,9 @@ where $K_m = \dfrac{k_r + k_\text{cat}}{k_f}$ is known as the Michaelis constant
 \nonumber\\
     \iff \dv{P}{t} &= k_{\text{obs}} \times \frac{\ce{[S]}}{\ce{[S]} + K_m}\label{eq:mm}
 \end{align}
-where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_m$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox \cite{matlab}.
+where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{\text{obs}}, K_m$ along with an y-intercept to account for systematic errors are then determined using MATLAB's curve fitting toolbox~\cite{matlab}.
+
+\section*{Conclusion}
 
 \begin{figure}[H]
     \centering
@@ -298,17 +302,22 @@ where $k_{\text{obs}} = k_\text{cat} \ce{[E]_0} \times R T$. The parameters $k_{
     \label{fig:processed-data}
 \end{figure}
 
-At the exception of the \SI{2.00}{\mL} (or \SI{0.356}{\molar}) \ce{H2O2} trials, both curves pass through all the data points within the margins of error. Hence, the experimental data support both the power law formulation and the Michaelis-Menten model.
+At the exception of the \SI{2.00}{\mL} (or \SI{0.356}{\molar}) \ce{H2O2} trials, both curves pass through all the data points within the relatively tolerant margins of error. Hence, the experimental data appear to support both the power law formulation and the Michaelis-Menten model. However, the respective characteristics of the two kinetic models should be discussed with reference to the data.
 
-Test \cite{mathematical_biology}
-\cite{tachiev}
-\cite{de_laat}
+\Cref{fig:processed-data} shows that, with the power law formulation of the rate equation, the ferric ion catalysed decomposition reaction of hydrogen peroxide is of order $1.255$ with respect to~\ce{H2O2}. Firstly, the reaction can be considered as pseudo-first order, as reported by de Laat and Gallard~\cite{de_laat} for lower $\ce{Fe(III)}$ catalyst concentrations and by Abbot and Brown~\cite{pseudo_first_order} under alkaline conditions. Additionally, since $1.255 \approx \frac{5}{4}$, it can be considered as a fractional order that often arise in chain reactions where intermediates are involved~\cite{atkins}. Nevertheless, such orders only indicate that intermediate steps exist, but does not offer insight into the concrete reaction mechanism.
+
+On the other hand, the Michaelis-Menten equation is derived from the rates of the proposed reaction steps. The model postulates that the decomposition of \ce{H2O2} consists of a reversible binding of \ce{Fe(III)} with \ce{H2O2} forming \ce{Fe(III)-H2O2} intermediates, and an irreversible production of \ce{O2} from \ce{Fe(III)-H2O2}. Tachiev et al.~\cite{tachiev} proposed a similar mechanism for the decomposition of \ce{H2O2} catalysed by \ce{Fe(II)}; Francis et al.~\cite{Fe_mm} empirically determined a rate equation that takes the same form as \cref{eq:mm} for \ce{Fe(III)} complexes. It is further assumed that the products do not affect the reaction rates; i.e., \ce{H2O} and \ce{O2} do not act as a catalyst or an inhibitor in any of the steps. Given that \ce{O2} is formed at a very controlled rate, even if the concentration of \ce{O2} has an impact on the rates, \ce{[O2]} will be negligible at the start of the reaction. As such, only the initial rates are considered. On the other hand, the instantaneous establishment of the quasi-steady-state requires that~\cite{mathematical_biology} \[ \frac{\ce{[E]_0}}{\ce{[S]} + K_m} \ll 1 . \] In this study, $\ce{[E]_0} = \SI{0.02}{\molar}$ across all trials; $\ce{[S]}$ varies from \SI{0.178}{\molar} to \SI{0.713}{\molar}; $K_m = \SI{1.468}{\molar}$ as seen in \cref{fig:processed-data}. Clearly, $\ce{[E]_0} \ll \ce{[S]} + K_m$ and the condition is met.
+
+Attention should be paid to the negative y-intercept of $-0.09687$ of the Michaelis-Menten curve in \cref{fig:processed-data}. A negative reaction rate does not carry any chemical meaning; the y-intercept should therefore be due to systematic errors which will be discussed below.
+
+A survey of the literature revealed many different reaction mechanisms (\cite{pseudo_first_order} \cite{Fe_mm} \cite{de_laat} \cite{tachiev}) subject to a range of factors -- the initial concentration of \ce{H2O2}, the initial concentration of \ce{Fe(III)} catalyst, pH of the solution, etc. Unfortunately, no publication that coincides with the circumstances studied in this experiment was found to validate the results. That said, despite the limited precision due to the apparatus used in a school laboratory, this study can serve to test the applicability of the proposed models under a wider range of conditions.
+
+To conclude, with the available experimental data, both the power law formulation and the Michaelis-Menten model are plausible mechanisms for the decomposition of hydrogen peroxide in presence of \ce{Fe^3+} ion catalysts. Nonetheless, at higher \ce{H2O2} concentrations, the Michaelis-Menten model predicts that the initial rate will be nearly zero-order with respect to hydrogen peroxide, while the power law predicts that the initial rate will grow exponentially. As such, further trials with higher \ce{H2O2} concentrations (e.g., $\ce{[H2O2]}~\geq~\SI{1.0}{\molar}$) need to be conducted to verify the validity of either model. Given the complex nature of the catalysis process, however, it is very likely that neither model will be able to fully explain the dependence of the initial rate on \ce{H2O2} concentration.
 
 \section*{Evaluation}
 
-\section*{Conclusion}
 
-\section*{Extension}
+\clearpage
 
 \printbibliography
 
